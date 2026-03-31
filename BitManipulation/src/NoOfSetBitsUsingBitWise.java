@@ -8,8 +8,10 @@ public class NoOfSetBitsUsingBitWise
         System.out.println("Enter a number: ");
         int n=sc.nextInt();
         int count=0;
-        while(n>0){
-            if((n&1)==1){
+        while(n>0)
+        {
+            if((n&1)==1)
+            {
                 count++;
             }
             n=n>>1;
