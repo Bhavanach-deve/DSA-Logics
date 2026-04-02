@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class ClearBitsFromitoj
 {
     public static int clear(int n,int i,int j){
-        int a=(-1<<j);
+        int a=(-1<<(j+1));
         int b=(1<<i)-1;
         int mask=(a|b);
         int result=n&(mask);
