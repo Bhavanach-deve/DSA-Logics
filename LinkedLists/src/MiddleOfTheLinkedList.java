@@ -29,9 +29,7 @@ public class MiddleOfTheLinkedList
         d1.next.next=new Nodes(3);
         d1.next.next.next=new Nodes(4);
         d1.next.next.next.next=new Nodes(5);
-
         Nodes middle=middleNode(d1);
-
         System.out.println("Middle node data: "+middle.data);
 
     }
