@@ -41,7 +41,7 @@ public class RemoveNthNodeFromTheEnd
         head.next.next = new Nnode(3);
         head.next.next.next = new Nnode(4);
         head.next.next.next.next = new Nnode(5);
-        removeEnd(head,3);
+        head=removeEnd(head,3);
         print(head);
 
     }
