@@ -1,3 +1,10 @@
+//A node is critical if it is:
+//Local Maximum
+//prev < curr > next
+//Local Minimum
+//prev > curr < next
+//First and last node can never be critical.
+
 class No{
     int data;
     No next;
@@ -38,8 +45,6 @@ public class MinAndMaxNoOfNodesBwCriticalPoints
 
         return new int[]{minDist,prevCritical-first};
     }
-
-
 
     public static void main(String[] args)
     {
