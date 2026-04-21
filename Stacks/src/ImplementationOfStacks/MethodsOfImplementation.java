@@ -13,6 +13,6 @@ public class MethodsOfImplementation
         stack.push(-1);
         stack.display();
         System.out.println("Deleted the value at the top: "+stack.pop());
-
+        stack.display();
     }
 }
