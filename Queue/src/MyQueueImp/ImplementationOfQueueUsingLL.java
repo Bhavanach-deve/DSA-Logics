@@ -45,7 +45,7 @@ public class ImplementationOfQueueUsingLL
         System.out.println("-------------");
         Node temp=this.head;
         while(temp!=null){
-            System.out.println(temp.data+" ");
+            System.out.print(temp.data+" ");
             temp=temp.next;
         }
         System.out.println();
