@@ -59,7 +59,6 @@ public class InFixToPostFix
         while(!st.empty()){
             postfix=postfix+st.pop();
         }
-
         return postfix;
     }
 }
