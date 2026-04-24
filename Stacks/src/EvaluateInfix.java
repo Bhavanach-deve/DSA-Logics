@@ -1,102 +1,123 @@
 import java.util.Stack;
 
-public class EvaluateInfix
-{
-    public static void main(String[] args)
-    {
-        System.out.println(infixExp("2*(5*(3+6))/5-2"));
+public class EvaluateInfix {
 
+    public static void main(String[] args) {
+
+        System.out.println(infixExp("2*(5*(3+6))/5-2")); // 16
     }
 
-    private static int infixExp(String exp){
-        Stack<Integer>operands=new Stack<>();
-        Stack<Character>operators=new Stack<>();
+    public static int infixExp(String exp) {
 
-        for(int i=0;i<exp.length();i++){
-            char c=exp.charAt(i);
+        Stack<Integer> operands = new Stack<>();
+        Stack<Character> operators = new Stack<>();
 
-            if(Character.isWhitespace(c)){
+        for (int i = 0; i < exp.length(); i++) {
+
+            char c = exp.charAt(i);
+
+            // ignore spaces
+            if (c == ' ') {
                 continue;
             }
 
-            if(Character.isDigit(c)){
-                operands.push(c-'0');
+            // multi-digit number
+            if (Character.isDigit(c)) {
 
+                int num = 0;
+
+                while (i < exp.length() && Character.isDigit(exp.charAt(i))) {
+                    num = num * 10 + (exp.charAt(i) - '0');
+                    i++;
+                }
+
+                operands.push(num);
+                i--; // because for loop will increment
             }
-            else if(c=='(')
-            {
+
+            // opening bracket
+            else if (c == '(') {
                 operators.push(c);
-
             }
-            else if(c==')')
-            {
-                while(!operators.isEmpty()&& operators.peek()!='('){
-                    int op2=operands.pop();
-                    int op1=operands.pop();
 
-                    char operator=operators.pop();
-                    int result=performOperation(op1, op2,operator);
-                    operands.push(result);
+            // closing bracket
+            else if (c == ')') {
+
+                while (!operators.isEmpty() && operators.peek() != '(') {
+                    evaluateTop(operands, operators);
                 }
-                operators.pop();
 
+                operators.pop(); // remove '('
             }
-            else if(isOperator(c)){
-                while(!operators.isEmpty() && precedence(c)<=precedence(operators.peek())){
-                    int op1=operands.pop();
-                    int op2=operands.pop();
 
-                    char operator=operators.pop();
-                    int result=performOperation(op1, op2,operator);
-                    operands.push(result);
+            // operator
+            else if (isOperator(c)) {
+
+                while (!operators.isEmpty()
+                        && operators.peek() != '('
+                        && precedence(operators.peek()) >= precedence(c)) {
+
+                    evaluateTop(operands, operators);
                 }
+
                 operators.push(c);
             }
         }
-        while(!operators.isEmpty()){
-            int op1=operands.pop();
-            int op2=operands.pop();
 
-            char operator=operators.pop();
-            int result=performOperation(op1, op2,operator);
-            operands.push(result);
+        // remaining operators
+        while (!operators.isEmpty()) {
+            evaluateTop(operands, operators);
         }
+
         return operands.pop();
     }
 
-    public static int performOperation(int op1 ,int op2,char operator ){
-        switch(operator){
-            case '+':
-                return op1+op2;
-            case '-':
-                return op1-op2;
-            case '/':
-                return op1/op2;
-            case '*':
-                return op1*op2;
-        }
-        return 0;
+    public static void evaluateTop(Stack<Integer> operands,
+                                   Stack<Character> operators) {
+
+        int op2 = operands.pop(); // right operand
+        int op1 = operands.pop(); // left operand
+
+        char operator = operators.pop();
+
+        int result = performOperation(op1, op2, operator);
+
+        operands.push(result);
     }
-    public static boolean isOperator(char x)
-    {
-        if(x=='+'||x=='-'||x=='/'||x=='*'){
-            return true;
-        }else {
-            return false;
+
+    public static int performOperation(int op1, int op2, char operator) {
+
+        switch (operator) {
+
+            case '+':
+                return op1 + op2;
+
+            case '-':
+                return op1 - op2;
+
+            case '*':
+                return op1 * op2;
+
+            case '/':
+                return op1 / op2;
         }
 
+        return 0;
     }
-    public static int precedence(char c){
-        if(c=='^'){
-            return 3;
-        }
-        else if(c=='/'||c=='*'){
+
+    public static boolean isOperator(char c) {
+
+        return c == '+' || c == '-' || c == '*' || c == '/';
+    }
+
+    public static int precedence(char c) {
+
+        if (c == '*' || c == '/')
             return 2;
-        }
-        else if(c=='+'||c=='-'){
+
+        if (c == '+' || c == '-')
             return 1;
-        }
-        else
-            return 0;
+
+        return 0;
     }
 }
