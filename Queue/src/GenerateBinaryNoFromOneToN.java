@@ -20,7 +20,5 @@ public class GenerateBinaryNoFromOneToN
     {
         int n=15;
         generate(n);
-
-
     }
 }
