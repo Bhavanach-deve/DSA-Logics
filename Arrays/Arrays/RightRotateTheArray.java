@@ -4,7 +4,6 @@ public class RightRotateTheArray
 {
     public static void rightRotate(int arr[],int k) {
         int n=arr.length;
-        k= k % n;
         //Copy last k elements
         int []temp= Arrays.copyOfRange(arr,n-k,n);
         //Shift the remaining elements to the right
