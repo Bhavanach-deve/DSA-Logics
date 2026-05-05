@@ -1,5 +1,8 @@
 package BinaryTree;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 class Nodes{
     public int data;
     Nodes left;
@@ -42,5 +45,20 @@ public class BinaryTreeImple
         postOrder(root.right);
         System.out.print(root.data+" ");
     }
+    //Breadth First Search
+    public void levelOrder()
+    {
+        if(root==null)
+            return;
+        Queue<Nodes>queue=new LinkedList<>();
+        queue.add(root);
+        while(!queue.isEmpty()){
+            Nodes temp=queue.poll();
+            System.out.print(temp.data+" ");
+            if(temp.left!=null)queue.add(temp.left);
+            if(temp.right!=null)queue.add(temp.right);
 
+        }
+
+    }
 }
