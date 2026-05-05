@@ -1,4 +1,4 @@
-public class BitBinary
+public class BinaryPalindrome
 {
     public static boolean isPalindromeBinary(int n)
     {
@@ -16,7 +16,7 @@ public class BitBinary
     }
     public static void main(String[] args)
     {
-        int n=17;
+        int n=1;
 
         System.out.println(isPalindromeBinary(n));
 
