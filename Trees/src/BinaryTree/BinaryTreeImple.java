@@ -61,4 +61,18 @@ public class BinaryTreeImple
         }
 
     }
+    //Search for an element in Binary Tree
+    public boolean searchForData(Nodes root,int x)
+    {
+        if(root==null)
+            return false;
+        if(root.data==x){
+            return true;
+        }
+        boolean lf=searchForData(root.left,x);
+        boolean rt=searchForData(root.right,x);
+
+        return lf||rt;
+
+    }
 }

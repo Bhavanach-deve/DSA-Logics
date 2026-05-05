@@ -22,6 +22,10 @@ public class BinaryTreeMain
         System.out.println();
         System.out.print("Breadth First Traversal: ");
         tree.levelOrder();
+        int x=40;
+        System.out.println();
+        System.out.println("Is "+x+" in the tree?");
+        System.out.println(tree.searchForData(tree.root,x));
 
     }
 }
