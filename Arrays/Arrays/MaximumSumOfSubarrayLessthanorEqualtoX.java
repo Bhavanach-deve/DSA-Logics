@@ -9,12 +9,14 @@ class FindMaxSum
         for(int i=0;i<arr.length;i++)
         {
             sum=sum+arr[i];
+            // shrink window
             while(sum>=x)
             {
                 sum=sum-arr[left];
                 left++;
 
             }
+            //valid sum
             maxSum=Math.max(maxSum,sum);
         }
         return maxSum;
