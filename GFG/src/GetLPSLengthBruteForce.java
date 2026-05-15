@@ -23,10 +23,8 @@ public class GetLPSLengthBruteForce
         return res;
     }
 
-    public static void main(String[] args)
-    {
-        String s="ababab";
+    public static void main(String[] args) {
+        String s = "aabcdaabc";
         System.out.println(getlpsLength(s));
     }
-
 }
