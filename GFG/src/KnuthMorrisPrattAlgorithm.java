@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 
-public class KnuthMorrisAlgorithmPratt
+public class KnuthMorrisPrattAlgorithm
 {
-   public static void constructLPS(String pat,int[]lps){
+    public static void constructLPS(String pat,int[]lps){
         int len=0;
         lps[0]=0;
 
