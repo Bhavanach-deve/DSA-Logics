@@ -1,8 +1,12 @@
+//Longest Proper Prefix which is also a Suffix (LPS).
+//
+//Prefix → starting part of the string
+//Suffix → ending part of the string
+//Proper means the whole string itself is not allowed
 class LPS{
     int getLPSLength(String s)
     {
         // code here
-
         int n=s.length();
         int[]lps=new int[n];
         int len=0;
