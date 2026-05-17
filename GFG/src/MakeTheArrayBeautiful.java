@@ -16,7 +16,7 @@ public class MakeTheArrayBeautiful
 
         for(int nums:arr)
         {
-            if(!res.isEmpty()&&((res.peek()>0&&nums<0)||(res.peek()<0&&nums>0))){
+            if(!res.isEmpty()&&((res.peek()>=0&&nums<0)||(res.peek()<0&&nums>=0))){
                 res.pop();
             }else{
                 res.push(nums);
