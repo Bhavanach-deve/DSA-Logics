@@ -23,8 +23,6 @@ public class ProductPairOptimalUsingHashSet
         }
         return false;
     }
-
-
     public static void main(String[] args)
     {
         int arr[]={10,20,9,40};
