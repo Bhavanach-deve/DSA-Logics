@@ -7,6 +7,9 @@
 //Explanation: Pushup 1: No Money, Pushup 2:
 //+2 Pushup 3: No Money, Pushup 4: +4 and
 //Pushup 5: No Money.
+
+//get the multiples of k up to n
+
 public class GeeksWeight
 {
     public static long totalMoney(int n,int k){
