@@ -18,7 +18,7 @@ public class PrintDifferentCharactersInSortedManner
 
     public static void main(String[] args)
     {
-        System.out.println(distinctSortedChar("abdbc"));
+        System.out.println(distinctSortedChar("ab"));
 
 
     }
