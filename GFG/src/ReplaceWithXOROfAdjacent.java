@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-
+//Given a number n, find whether n can be expressed as sum of two or more consecutive positive numbers.
 public class ReplaceWithXOROfAdjacent {
     public static void replace(int arr[]) {
         int n = arr.length;
