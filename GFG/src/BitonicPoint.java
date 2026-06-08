@@ -20,15 +20,33 @@ public class BitonicPoint
         }
         return max;
     }
+    //Binary Search
+    public static int findMaximumBS(int []arr){
+        int low=0;
+        int high=arr.length-1;
+        while(low<high){
+            int mid=low+(high-low)/2;
+            if(arr[mid]<arr[mid+1]){
+                low=mid+1;
+            }else{
+                high=mid;
+            }
+        }
+        return arr[low];
+    }
 
    public static void main(String[] args)
    {
        int arr[]={120,100,80,20,0};
+       System.out.println("Using Sorting-Complexity: O(nlogn)");
        int ans=findMaximum(arr);
        System.out.println(ans);
-       System.out.println("Using Linear Search: ");
+       System.out.println("Using Linear Search: Complexity: O(n)");
        int lans=findMax(arr);
        System.out.println(lans);
+       System.out.println("Using Binary Search: O(logn)");
+       int bsAns=findMaximumBS(arr);
+       System.out.println(bsAns);
 
     }
 }
