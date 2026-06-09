@@ -37,7 +37,7 @@ public class BitonicPoint
 
    public static void main(String[] args)
    {
-       int arr[]={120,100,80,20,0};
+       int arr[]={1,3,8,12,4,2};
        System.out.println("Using Sorting-Complexity: O(nlogn)");
        int ans=findMaximum(arr);
        System.out.println(ans);
