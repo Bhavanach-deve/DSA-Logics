@@ -13,6 +13,10 @@ public class EqualPointInBrackets
             }
         }
         int open=0;
+
+        if(open==close){
+            return 0;
+        }
         for(int i=0;i<s.length();i++){
             if(s.charAt(i)=='('){
                 open++;
