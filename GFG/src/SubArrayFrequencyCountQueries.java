@@ -1,5 +1,4 @@
 //Given an array arr[] of n integers and a 2D array queries[][] representing q queries, where each queries[i] consists of three integers: l, r, and x. For each query determine how many times the element x appears in the arr[] from index l to r (both inclusive).
-//
 //Return a list of integers where the i-th value represents the answer to the i-th query.
 import java.util.ArrayList;
 public class SubArrayFrequencyCountQueries
