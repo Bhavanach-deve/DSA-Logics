@@ -1,5 +1,5 @@
 //Given a string s as input. Delete the characters at odd indices of the string. Return the final string after deletion of characters at odd indices.
-public class DeleteAlternateCharacters
+public class DeleteAlternateCharactersGFG
 {
     public static String delete(String s)
     {
