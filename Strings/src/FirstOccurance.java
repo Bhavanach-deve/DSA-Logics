@@ -1,5 +1,6 @@
 //Given two strings txt and pat, return the 0-based index of the first occurrence of the substring pat in txt. If pat is not found, return -1.
 //Note: You are not allowed to use the inbuilt function.
+//Brute force can be solved with KnuttMorisPatt
 public class FirstOccurance
 {
     public static int firstOcc(String text,String patt)
