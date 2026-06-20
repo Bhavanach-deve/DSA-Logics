@@ -1,3 +1,4 @@
+//Given an integer n. Write a program to print the inverted "Right angle triangle" wall. The length of the perpendicular and base is n.
 public class InvertedRightAngleTriangle
 {
     public static void main(String[] args)
