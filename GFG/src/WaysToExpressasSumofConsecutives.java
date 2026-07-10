@@ -1,4 +1,4 @@
-//Given a number n, find the number of ways to represent this number as a sum of 2 or more consecutive natural numbers
+//Given a number n, find the number of ways to represent this number as a sum of 2 or more consecutive natural numbers BRUTE FORCE
 public class WaysToExpressasSumofConsecutives
 {
     public static int getCount(int n)
