@@ -22,7 +22,7 @@ public class MaxAmountBySellingKTicketsGfG
             if(arr[maxIndex]==0){
                 break;
             }
-            ans=(ans+arr[maxIndex]);
+            ans=(ans+arr[maxIndex])%MOD;
             arr[maxIndex]--;
         }
         return (int)ans;
