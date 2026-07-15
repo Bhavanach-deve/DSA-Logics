@@ -2,7 +2,7 @@
 //A subarray arr[i...j] is considered bitonic if its elements first monotonically increase, and then monotonically decrease. Formally, there exists and index k (where i <= k <= j) such that:
 //arr[i] <= arr[i+1] <= . . . <= arr[k]
 //arr[k] >= arr[k+1] >= . . . >= arr[j]
-public class LongestBitonicArray
+public class LongestBitonicSubArray
 {
     public static int bitonic(int arr[]){
         int maxLen=1;
